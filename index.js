@@ -18,11 +18,11 @@ app.use(bodyParser.json());
 
 
 
-const serviceAccount = require("./burj-al-arab-test-firebase-adminsdk-1nzyy-88baa49429.json");
+const serviceAccount = require("./configs/burj-al-arab-test-firebase-adminsdk-1nzyy-88baa49429.json");
 
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
-    databaseURL: "https://burj-al-arab-test.firebaseio.com"
+    databaseURL: process.env.FIRE_DB
 });
 
 
